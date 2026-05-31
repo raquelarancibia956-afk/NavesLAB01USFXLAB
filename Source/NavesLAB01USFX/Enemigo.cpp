@@ -51,20 +51,58 @@ void AEnemigo::Tick(float DeltaTime)
 	Disparar();
 	ActualizarEfecto(DeltaTime);
 }
-
+///////////
 void AEnemigo::Moverse(float DeltaTime)
 {
-	if (Jugador)
+	if (!bMovimientoAutonomo) return;
+
+	if (PosicionInicial.IsZero())
 	{
-		FVector Direccion = Jugador->GetActorLocation() - GetActorLocation();
-		Direccion.Normalize();
-
-		FVector NuevaPosicion = GetActorLocation() + Direccion * Velocidad * DeltaTime;
-		SetActorLocation(NuevaPosicion);
-
-		FRotator Rotacion = Direccion.Rotation();
-		SetActorRotation(Rotacion);
+		PosicionInicial = GetActorLocation();
 	}
+
+	FVector NuevaPosicion = GetActorLocation();
+
+	switch (TipoMovimiento)
+	{
+	case 0: // Recto
+		NuevaPosicion += FVector(Velocidad * DeltaTime, 0, 0);
+		break;
+
+	case 1: // Zigzag
+	{
+		float Tiempo = GetWorld()->GetTimeSeconds();
+		float OffsetY = FMath::Sin(Tiempo * 3.0f) * 100.0f;
+		NuevaPosicion += FVector(Velocidad * DeltaTime, OffsetY * DeltaTime, 0);
+	}
+	break;
+
+	case 2: // Circular
+	{
+		float Tiempo = GetWorld()->GetTimeSeconds();
+		float Radio = 200.0f;
+		float VelocidadAngular = 2.0f;
+		float Angulo = Tiempo * VelocidadAngular;
+		FVector Centro = PosicionInicial;
+		NuevaPosicion.X = Centro.X + FMath::Cos(Angulo) * Radio;
+		NuevaPosicion.Y = Centro.Y + FMath::Sin(Angulo) * Radio;
+	}
+	break;
+
+	case 3: // Senoide
+	{
+		float Tiempo = GetWorld()->GetTimeSeconds();
+		float OffsetY = FMath::Sin(Tiempo * 2.0f) * 150.0f;
+		NuevaPosicion += FVector(Velocidad * DeltaTime, OffsetY * DeltaTime, 0);
+	}
+	break;
+
+	default:
+		NuevaPosicion += FVector(Velocidad * DeltaTime, 0, 0);
+		break;
+	}
+
+	SetActorLocation(NuevaPosicion);
 }
 
 void AEnemigo::Atacar(AActor* Objetivo)

@@ -5,19 +5,13 @@
 AEADron::AEADron()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'")
-	);
-	if (MallaAsset.Succeeded())
-	{
-		MallaEnemigo->SetStaticMesh(MallaAsset.Object);
-	}
 
 	Velocidad = 300.0f;
 	VidaMaxima = 30.0f;
 	VidaActual = VidaMaxima;
 	Dano = 10.0f;
-	SetActorScale3D(FVector(0.8f));  // Más pequeño
+	SetActorScale3D(FVector(0.8f));  
+	TipoMovimiento = 2;
 }
 
 void AEADron::Tick(float DeltaTime)

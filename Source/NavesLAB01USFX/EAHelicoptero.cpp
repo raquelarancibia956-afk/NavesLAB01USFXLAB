@@ -5,19 +5,11 @@
 AEAHelicoptero::AEAHelicoptero()
 {
 	PrimaryActorTick.bCanEverTick = true;  
-	// Misma malla que aéreo o diferente
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'")
-	);
-	if (MallaAsset.Succeeded())
-	{
-		MallaEnemigo->SetStaticMesh(MallaAsset.Object);
-	}
-
 	Velocidad = 400.0f;
 	VidaMaxima = 50.0f;
 	VidaActual = VidaMaxima;
 	Dano = 25.0f;
+	TipoMovimiento = 3;
 }
 
 void AEAHelicoptero::Tick(float DeltaTime)

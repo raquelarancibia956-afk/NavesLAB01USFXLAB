@@ -18,6 +18,7 @@ AEAMotoAcuatica::AEAMotoAcuatica()
 	VidaActual = VidaMaxima;
 	Dano = 10.0f;
 	SetActorScale3D(FVector(0.5f));
+	TipoMovimiento = 1;
 }
 
 void AEAMotoAcuatica::Tick(float DeltaTime)

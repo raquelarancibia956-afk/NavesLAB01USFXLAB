@@ -4,20 +4,12 @@
 
 AETSoldado::AETSoldado()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'")
-	);
-	if (MallaAsset.Succeeded())
-	{
-		MallaEnemigo->SetStaticMesh(MallaAsset.Object);
-	}
-
 	Velocidad = 300.0f;
 	VidaMaxima = 40.0f;
 	VidaActual = VidaMaxima;
 	Dano = 15.0f;
 	SetActorScale3D(FVector(0.6f));
+	TipoMovimiento = 0;
 }
 
 void AETSoldado::Tick(float DeltaTime)

@@ -22,6 +22,8 @@ class ANavesLAB01USFXPawn : public APawn
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(Category = Camera, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
+	UPROPERTY()
+	bool bNaveDestruida = false;
 
 public:
 	ANavesLAB01USFXPawn();

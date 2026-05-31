@@ -26,6 +26,19 @@ public:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaTime) override;
 
+    // ===== CONTENEDOR DE 20 NAVES (NUEVO) =====
+    UPROPERTY()
+    TArray<AEnemigo*> ContenedorNaves;
+
+    bool bEnFormacion;
+    FTimerHandle TimerCambioModo;
+
+    void GenerarContenedorNaves();
+    void FormarNaves();
+    void ModoAutonomo();
+    void CambiarModo();
+    float EspaciadoFormacion = 100.0f;
+
     // ===== CUADRILLAS =====
     UPROPERTY()
     TArray<AEnemigo*> Cuadrilla1;

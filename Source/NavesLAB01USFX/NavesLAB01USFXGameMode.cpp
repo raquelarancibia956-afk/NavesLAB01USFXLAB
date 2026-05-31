@@ -24,9 +24,8 @@
 ANavesLAB01USFXGameMode::ANavesLAB01USFXGameMode()
 {
     DefaultPawnClass = ANavesLAB01USFXPawn::StaticClass();
-    CuadrillaActual = ECuadrilla::Primera;  // ? Inicializar cuadrilla
-}  // ? CIERRE DEL CONSTRUCTOR
-
+    CuadrillaActual = ECuadrilla::Primera;  
+} 
 void ANavesLAB01USFXGameMode::BeginPlay()
 {
     Super::BeginPlay();
@@ -36,16 +35,17 @@ void ANavesLAB01USFXGameMode::BeginPlay()
 
     PlayerPawn = UGameplayStatics::GetPlayerPawn(this, 0);
 
+    //Generar las 20 naves
+    GenerarContenedorNaves();
+    bEnFormacion = false;
+
+    // Timer para cambiar modo cada 5 segundos
+    GetWorldTimerManager().SetTimer(TimerCambioModo, this, &ANavesLAB01USFXGameMode::CambiarModo, 5.0f, true);
+
     GenerarCuadrilla1();
     GenerarMuros();
 
-    GetWorldTimerManager().SetTimer(
-        TimerRevisarCuadrilla,
-        this,
-        &ANavesLAB01USFXGameMode::RevisarCuadrilla,
-        1.0f,
-        true
-    );
+    GetWorldTimerManager().SetTimer(TimerRevisarCuadrilla, this, &ANavesLAB01USFXGameMode::RevisarCuadrilla, 1.0f, true);
 }
 
 void ANavesLAB01USFXGameMode::Tick(float DeltaTime)
@@ -186,39 +186,49 @@ void ANavesLAB01USFXGameMode::GenerarMuros()
 
     MurosArray.Empty();
 
-    CrearMuroDeslizante(World, FVector(1000, 800, 100), FVector(1, 0, 0), 400, 150);
-    CrearMuroDeslizante(World, FVector(800, 1000, 100), FVector(0, 1, 0), 400, 150);
-    CrearMuroDeslizante(World, FVector(-1000, 800, 100), FVector(1, 0, 0), 400, 150);
-    CrearMuroDeslizante(World, FVector(-800, 1000, 100), FVector(0, 1, 0), 400, 150);
-    CrearMuroDeslizante(World, FVector(1000, -800, 100), FVector(1, 0, 0), 400, 150);
-    CrearMuroDeslizante(World, FVector(800, -1000, 100), FVector(0, 1, 0), 400, 150);
-    CrearMuroDeslizante(World, FVector(-1000, -800, 100), FVector(1, 0, 0), 400, 150);
-    CrearMuroDeslizante(World, FVector(-800, -1000, 100), FVector(0, 1, 0), 400, 150);
+    // ===== MUROS DESLIZANTES (8) =====
+    // Arriba
+    CrearMuroDeslizante(World, FVector(0, 1500, 150), FVector(1, 0, 0), 800, 150);
+    // Abajo
+    CrearMuroDeslizante(World, FVector(0, -1500, 150), FVector(1, 0, 0), 800, 150);
+    // Derecha
+    CrearMuroDeslizante(World, FVector(1500, 0, 150), FVector(0, 1, 0), 800, 150);
+    // Izquierda
+    CrearMuroDeslizante(World, FVector(-1500, 0, 150), FVector(0, 1, 0), 800, 150);
 
-    CrearMuroParpadeante(World, FVector(-500, 1100, 100), 2.0f, 1.0f);
-    CrearMuroParpadeante(World, FVector(0, 1150, 100), 3.0f, 1.5f);
-    CrearMuroParpadeante(World, FVector(500, 1100, 100), 2.5f, 1.0f);
-    CrearMuroParpadeante(World, FVector(-500, -1100, 100), 2.0f, 1.5f);
-    CrearMuroParpadeante(World, FVector(0, -1150, 100), 3.0f, 1.0f);
-    CrearMuroParpadeante(World, FVector(500, -1100, 100), 2.5f, 1.5f);
-    CrearMuroParpadeante(World, FVector(1100, -500, 100), 2.0f, 1.0f);
-    CrearMuroParpadeante(World, FVector(1150, 0, 100), 3.0f, 1.5f);
-    CrearMuroParpadeante(World, FVector(1100, 500, 100), 2.5f, 1.0f);
-    CrearMuroParpadeante(World, FVector(-1100, -500, 100), 2.0f, 1.5f);
-    CrearMuroParpadeante(World, FVector(-1150, 0, 100), 3.0f, 1.0f);
-    CrearMuroParpadeante(World, FVector(-1100, 500, 100), 2.5f, 1.5f);
+    // Esquinas
+    CrearMuroDeslizante(World, FVector(1200, 1200, 150), FVector(1, 1, 0), 400, 150);
+    CrearMuroDeslizante(World, FVector(-1200, 1200, 150), FVector(-1, 1, 0), 400, 150);
+    CrearMuroDeslizante(World, FVector(1200, -1200, 150), FVector(1, -1, 0), 400, 150);
+    CrearMuroDeslizante(World, FVector(-1200, -1200, 150), FVector(-1, -1, 0), 400, 150);
 
-    CrearMuroDivisible(World, FVector(1300, 1300, 100));
-    CrearMuroDivisible(World, FVector(-1300, 1300, 100));
-    CrearMuroDivisible(World, FVector(1300, -1300, 100));
-    CrearMuroDivisible(World, FVector(-1300, -1300, 100));
+    // ===== MUROS PARPADEANTES (8) =====
+    CrearMuroParpadeante(World, FVector(800, 1300, 150), 2.0f, 1.0f);
+    CrearMuroParpadeante(World, FVector(-800, 1300, 150), 2.0f, 1.0f);
+    CrearMuroParpadeante(World, FVector(800, -1300, 150), 2.0f, 1.0f);
+    CrearMuroParpadeante(World, FVector(-800, -1300, 150), 2.0f, 1.0f);
+    CrearMuroParpadeante(World, FVector(1300, 800, 150), 2.0f, 1.0f);
+    CrearMuroParpadeante(World, FVector(-1300, 800, 150), 2.0f, 1.0f);
+    CrearMuroParpadeante(World, FVector(1300, -800, 150), 2.0f, 1.0f);
+    CrearMuroParpadeante(World, FVector(-1300, -800, 150), 2.0f, 1.0f);
 
-    CrearMuroEstatico(World, FVector(-900, 900, 100), FVector(4.0f, 1.0f, 2.0f));
-    CrearMuroEstatico(World, FVector(0, 950, 100), FVector(6.0f, 1.0f, 2.0f));
-    CrearMuroEstatico(World, FVector(900, 900, 100), FVector(4.0f, 1.0f, 2.0f));
-    CrearMuroEstatico(World, FVector(-900, -900, 100), FVector(4.0f, 1.0f, 2.0f));
-    CrearMuroEstatico(World, FVector(0, -950, 100), FVector(6.0f, 1.0f, 2.0f));
-    CrearMuroEstatico(World, FVector(900, -900, 100), FVector(4.0f, 1.0f, 2.0f));
+    // ===== MUROS DIVISIBLES (4) =====
+    CrearMuroDivisible(World, FVector(1800, 0, 150));
+    CrearMuroDivisible(World, FVector(-1800, 0, 150));
+    CrearMuroDivisible(World, FVector(0, 1800, 150));
+    CrearMuroDivisible(World, FVector(0, -1800, 150));
+
+    // ===== MUROS ESTÁTICOS (8) =====
+    CrearMuroEstatico(World, FVector(500, 1200, 150), FVector(5.0f, 1.0f, 3.0f));
+    CrearMuroEstatico(World, FVector(-500, 1200, 150), FVector(5.0f, 1.0f, 3.0f));
+    CrearMuroEstatico(World, FVector(500, -1200, 150), FVector(5.0f, 1.0f, 3.0f));
+    CrearMuroEstatico(World, FVector(-500, -1200, 150), FVector(5.0f, 1.0f, 3.0f));
+    CrearMuroEstatico(World, FVector(1200, 500, 150), FVector(1.0f, 5.0f, 3.0f));
+    CrearMuroEstatico(World, FVector(1200, -500, 150), FVector(1.0f, 5.0f, 3.0f));
+    CrearMuroEstatico(World, FVector(-1200, 500, 150), FVector(1.0f, 5.0f, 3.0f));
+    CrearMuroEstatico(World, FVector(-1200, -500, 150), FVector(1.0f, 5.0f, 3.0f));
+
+    UE_LOG(LogTemp, Warning, TEXT("Muros generados: %d"), MurosArray.Num());
 }
 
 void ANavesLAB01USFXGameMode::CrearMuroDeslizante(UWorld* World, FVector Posicion, FVector Direccion, float Distancia, float Velocidad)
@@ -247,5 +257,101 @@ void ANavesLAB01USFXGameMode::CrearMuroEstatico(UWorld* World, FVector Posicion,
         Muro->Dimension = Dimension;
         Muro->ActualizarEscala();
         MurosArray.Add(Muro);
+    }
+}
+// ==================== CONTENEDOR DE 20 NAVES ====================
+
+void ANavesLAB01USFXGameMode::GenerarContenedorNaves()
+{
+    UWorld* World = GetWorld();
+    if (!World) return;
+
+    ContenedorNaves.Empty();
+
+    for (int i = 0; i < 20; i++)
+    {
+        float X = FMath::RandRange(-1500.0f, 1500.0f);
+        float Y = FMath::RandRange(-1500.0f, 1500.0f);
+        FVector Posicion = FVector(X, Y, 100.0f);
+
+        AEnemigo* NuevaNave = nullptr;
+
+        switch (i % 6)
+        {
+        case 0: NuevaNave = World->SpawnActor<AEAHelicoptero>(AEAHelicoptero::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+        case 1: NuevaNave = World->SpawnActor<AEAAvion>(AEAAvion::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+        case 2: NuevaNave = World->SpawnActor<AEADron>(AEADron::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+        case 3: NuevaNave = World->SpawnActor<AETSoldado>(AETSoldado::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+        case 4: NuevaNave = World->SpawnActor<AETTanque>(AETTanque::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+        case 5: NuevaNave = World->SpawnActor<AEABarco>(AEABarco::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+        }
+
+        if (NuevaNave)
+        {
+            NuevaNave->bMovimientoAutonomo = true;
+            NuevaNave->PosicionInicial = Posicion;
+            ContenedorNaves.Add(NuevaNave);
+        }
+    }
+
+    UE_LOG(LogTemp, Warning, TEXT("Contenedor: 20 naves creadas"));
+}
+
+void ANavesLAB01USFXGameMode::FormarNaves()
+{
+    if (!PlayerPawn) return;
+
+    FVector Centro = PlayerPawn->GetActorLocation();
+    Centro.Z += 100.0f;
+
+    float Radio = 500.0f;
+    int TotalNaves = ContenedorNaves.Num();
+
+    for (int i = 0; i < TotalNaves; i++)
+    {
+        if (AEnemigo* Nave = ContenedorNaves[i])
+        {
+            float Angulo = (360.0f / TotalNaves) * i;
+            float Rad = FMath::DegreesToRadians(Angulo);
+
+            float X = Centro.X + Radio * FMath::Cos(Rad);
+            float Y = Centro.Y + Radio * FMath::Sin(Rad);
+            FVector NuevaPos = FVector(X, Y, Centro.Z);
+
+            Nave->SetActorLocation(NuevaPos);
+            Nave->bMovimientoAutonomo = false;
+            Nave->PosicionInicial = NuevaPos;
+        }
+    }
+
+    GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT("FORMACION: Circulo"));
+}
+
+void ANavesLAB01USFXGameMode::ModoAutonomo()
+{
+    for (AEnemigo* Nave : ContenedorNaves)
+    {
+        if (Nave)
+        {
+            Nave->bMovimientoAutonomo = true;
+            Nave->PosicionInicial = Nave->GetActorLocation();  
+        }
+    }
+    GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, TEXT("AUTONOMO: Naves en movimiento"));
+}
+
+void ANavesLAB01USFXGameMode::CambiarModo()
+{
+    if (bEnFormacion)
+    {
+        bEnFormacion = false;
+        ModoAutonomo();
+        GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, TEXT("MODO AUToNOMO"));
+    }
+    else
+    {
+        bEnFormacion = true;
+        FormarNaves();
+        GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT("MODO FORMACIoN"));
     }
 }

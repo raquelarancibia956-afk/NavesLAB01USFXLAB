@@ -88,6 +88,11 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ContenedorNaves_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ContenedorNaves_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ContenedorNaves;
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Cuadrilla1_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Cuadrilla1_MetaData[];
@@ -124,6 +129,15 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ContenedorNaves_Inner = { "ContenedorNaves", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AEnemigo_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ContenedorNaves_MetaData[] = {
+		{ "Comment", "// ===== CONTENEDOR DE 20 NAVES (NUEVO) =====\n" },
+		{ "ModuleRelativePath", "NavesLAB01USFXGameMode.h" },
+		{ "ToolTip", "===== CONTENEDOR DE 20 NAVES (NUEVO) =====" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ContenedorNaves = { "ContenedorNaves", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, ContenedorNaves), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ContenedorNaves_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ContenedorNaves_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1_Inner = { "Cuadrilla1", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AEnemigo_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1_MetaData[] = {
@@ -155,6 +169,8 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 #endif
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_CuadrillaActual = { "CuadrillaActual", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, CuadrillaActual), Z_Construct_UEnum_NavesLAB01USFX_ECuadrilla, METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_CuadrillaActual_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_CuadrillaActual_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ContenedorNaves_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_ContenedorNaves,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla2_Inner,
@@ -191,7 +207,7 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 1795084352);
+	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 652745111);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<ANavesLAB01USFXGameMode>()
 	{
 		return ANavesLAB01USFXGameMode::StaticClass();

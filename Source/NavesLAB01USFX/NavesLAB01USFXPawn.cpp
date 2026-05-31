@@ -12,6 +12,7 @@
 #include "Engine/StaticMesh.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 const FName ANavesLAB01USFXPawn::MoveForwardBinding("MoveForward");
 const FName ANavesLAB01USFXPawn::MoveRightBinding("MoveRight");
@@ -141,12 +142,26 @@ void ANavesLAB01USFXPawn::ShotTimerExpired()
 //////////////////////////
 void ANavesLAB01USFXPawn::RecibirDanio(float Cantidad)
 {
+	if (bNaveDestruida) return; 
+
 	VidaActual -= Cantidad;
 	UE_LOG(LogTemp, Warning, TEXT("Nave recibe danio: %.0f, Vida restante: %.0f/%.0f"), Cantidad, VidaActual, VidaMaxima);
 
 	if (VidaActual <= 0.0f)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Nave destruida!"));
-		Destroy();
+		bNaveDestruida = true;  
+
+		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("GAME OVER - NAVE DESTRUIDA"));
+		UE_LOG(LogTemp, Warning, TEXT("!!! NAVE DESTRUIDA !!!"));
+
+		// Deshabilitar input del jugador
+		APlayerController* PC = Cast<APlayerController>(GetController());
+		if (PC)
+		{
+			PC->DisableInput(PC);
+		}
+
+		// Reiniciar el nivel
+		UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()));
 	}
 }

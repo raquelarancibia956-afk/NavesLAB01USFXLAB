@@ -18,6 +18,7 @@ AEALancha::AEALancha()
 	VidaActual = VidaMaxima;
 	Dano = 15.0f;
 	SetActorScale3D(FVector(0.7f));
+	TipoMovimiento =0;
 }
 
 void AEALancha::Tick(float DeltaTime)

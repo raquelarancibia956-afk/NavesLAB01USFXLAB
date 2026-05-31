@@ -18,6 +18,7 @@ AEABarco::AEABarco()
 	VidaActual = VidaMaxima;
 	Dano = 25.0f;
 	SetActorScale3D(FVector(1.8f));
+	TipoMovimiento = 1;
 }
 
 void AEABarco::Tick(float DeltaTime)

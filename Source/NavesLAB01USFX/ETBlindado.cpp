@@ -4,20 +4,12 @@
 
 AETBlindado::AETBlindado()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'")
-	);
-	if (MallaAsset.Succeeded())
-	{
-		MallaEnemigo->SetStaticMesh(MallaAsset.Object);
-	}
-
 	Velocidad = 120.0f;
 	VidaMaxima = 200.0f;
 	VidaActual = VidaMaxima;
 	Dano = 25.0f;
 	SetActorScale3D(FVector(1.3f));
+	TipoMovimiento = 2;
 }
 
 void AETBlindado::Tick(float DeltaTime)

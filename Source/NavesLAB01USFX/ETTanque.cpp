@@ -4,20 +4,12 @@
 
 AETTanque::AETTanque()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'")
-	);
-	if (MallaAsset.Succeeded())
-	{
-		MallaEnemigo->SetStaticMesh(MallaAsset.Object);
-	}
-
 	Velocidad = 150.0f;
 	VidaMaxima = 150.0f;
 	VidaActual = VidaMaxima;
 	Dano = 30.0f;
 	SetActorScale3D(FVector(1.5f));
+	TipoMovimiento = 2;
 }
 
 void AETTanque::Tick(float DeltaTime)

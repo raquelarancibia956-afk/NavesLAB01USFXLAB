@@ -12,6 +12,10 @@ class NAVESLAB01USFX_API AEnemigo : public AActor
 public:
 	AEnemigo();
 
+	UPROPERTY()
+	bool bMovimientoAutonomo = true;
+	UPROPERTY()
+	int TipoMovimiento = 0;  // 0=recto, 1=zigzag, 2=
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Colision")
 	UStaticMeshComponent* MallaEnemigo;
 
@@ -26,8 +30,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	float Dano;
-	UPROPERTY()
-	FVector PosicionInicial;
+	FVector PosicionInicial = FVector::ZeroVector;
 
 	UPROPERTY()
 	TArray<FVector> PuntosRuta;

@@ -61,7 +61,8 @@ public: \
 #define NavesLAB01USFX_master_Source_NavesLAB01USFX_NavesLAB01USFXPawn_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ShipMeshComponent() { return STRUCT_OFFSET(ANavesLAB01USFXPawn, ShipMeshComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraComponent() { return STRUCT_OFFSET(ANavesLAB01USFXPawn, CameraComponent); } \
-	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ANavesLAB01USFXPawn, CameraBoom); }
+	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ANavesLAB01USFXPawn, CameraBoom); } \
+	FORCEINLINE static uint32 __PPO__bNaveDestruida() { return STRUCT_OFFSET(ANavesLAB01USFXPawn, bNaveDestruida); }
 
 
 #define NavesLAB01USFX_master_Source_NavesLAB01USFX_NavesLAB01USFXPawn_h_9_PROLOG

@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEAHelicoptero() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEAHelicoptero, 1663574815);
+	IMPLEMENT_CLASS(AEAHelicoptero, 2311022931);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEAHelicoptero>()
 	{
 		return AEAHelicoptero::StaticClass();

@@ -4,20 +4,12 @@
 
 AETCamion::AETCamion()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'")
-	);
-	if (MallaAsset.Succeeded())
-	{
-		MallaEnemigo->SetStaticMesh(MallaAsset.Object);
-	}
-
 	Velocidad = 200.0f;
 	VidaMaxima = 80.0f;
 	VidaActual = VidaMaxima;
 	Dano = 12.0f;
 	SetActorScale3D(FVector(1.2f, 1.8f, 1.0f));
+	TipoMovimiento = 3;
 }
 
 void AETCamion::Tick(float DeltaTime)

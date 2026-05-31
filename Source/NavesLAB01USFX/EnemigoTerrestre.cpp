@@ -5,7 +5,7 @@
 AEnemigoTerrestre::AEnemigoTerrestre()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'")
+		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'")
 	);
 	if (MallaAsset.Succeeded())
 	{

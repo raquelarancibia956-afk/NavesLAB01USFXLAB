@@ -2,10 +2,14 @@
 #include "Components/StaticMeshComponent.h"
 #include "Engine/StaticMesh.h"
 
+#include "EnemigoAereo.h"
+#include "Components/StaticMeshComponent.h"
+#include "Engine/StaticMesh.h"
+
 AEnemigoAereo::AEnemigoAereo()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MallaAsset(
-		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'")
+		TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule'")
 	);
 	if (MallaAsset.Succeeded())
 	{

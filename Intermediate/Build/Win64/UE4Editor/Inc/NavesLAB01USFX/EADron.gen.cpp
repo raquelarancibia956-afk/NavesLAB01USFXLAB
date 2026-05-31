@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEADron() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEADron, 1444061323);
+	IMPLEMENT_CLASS(AEADron, 3488755452);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEADron>()
 	{
 		return AEADron::StaticClass();
