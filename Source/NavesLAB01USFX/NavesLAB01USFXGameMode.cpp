@@ -1,14 +1,24 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 #include "NavesLAB01USFXGameMode.h"
 #include "NavesLAB01USFXPawn.h"
 #include "Enemigo.h"
+#include "EnemigoAereo.h"
+#include "EnemigoTerrestre.h"
+#include "EnemigoAcuatico.h"
+#include "EAHelicoptero.h"
+#include "EAAvion.h"
+#include "EADron.h"
+#include "ETSoldado.h"
+#include "ETTanque.h"
+#include "ETCamion.h"
+#include "ETBlindado.h"
+#include "EABarco.h"
+#include "EALancha.h"
+#include "EAMotoAcuatica.h"
 #include "Muro.h"
 #include "MuroDeslizante.h"
 #include "MuroParpadeante.h"
 #include "MuroDivisible.h"
 #include "MuroEstatico.h"
-#include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
 ANavesLAB01USFXGameMode::ANavesLAB01USFXGameMode()
@@ -25,11 +35,16 @@ void ANavesLAB01USFXGameMode::BeginPlay()
 
     PlayerPawn = UGameplayStatics::GetPlayerPawn(this, 0);
 
-    // Generar enemigos
-    GenerarEnemigos();
-
-    // Generar muros
+    GenerarCuadrilla1();
     GenerarMuros();
+
+    GetWorldTimerManager().SetTimer(
+        TimerRevisarCuadrilla,
+        this,
+        &ANavesLAB01USFXGameMode::RevisarCuadrilla,
+        1.0f,
+        true
+    );
 }
 
 void ANavesLAB01USFXGameMode::Tick(float DeltaTime)
@@ -37,43 +52,150 @@ void ANavesLAB01USFXGameMode::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
-// ==================== MÉTODOS DE ENEMIGOS ====================
+// ==================== GENERAR CUADRILLA 1 (SOLO CLASES BASE) ====================
 
-void ANavesLAB01USFXGameMode::GenerarEnemigos()
+void ANavesLAB01USFXGameMode::GenerarCuadrilla1()
 {
     UWorld* World = GetWorld();
     if (!World) return;
 
-    // Posiciones diferentes para los enemigos
-    TArray<FVector> Posiciones = {
-        FVector(500, 500, 100),
-        FVector(-500, 500, 100),
-        FVector(500, -500, 100),
-        FVector(-500, -500, 100),
-        FVector(0, 800, 100),
-        FVector(0, -800, 100),
-        FVector(800, 0, 100),
-        FVector(-800, 0, 100)
-    };
+    Cuadrilla1.Empty();
 
-    for (FVector Pos : Posiciones)
-    {
-        AEnemigo* NuevoEnemigo = World->SpawnActor<AEnemigo>(
-            AEnemigo::StaticClass(),
-            Pos,
-            FRotator::ZeroRotator
-        );
+    // Crear 8 enemigos específicos para cuadrilla 1
+    // 1. Helicóptero
+    AEnemigo* H1 = World->SpawnActor<AEAHelicoptero>(AEAHelicoptero::StaticClass(), FVector(300, 300, 100), FRotator::ZeroRotator);
+    if (H1) Cuadrilla1.Add(H1);
 
-        if (NuevoEnemigo)
-        {
-            AEnemigos.Add(NuevoEnemigo);
-        }
-    }
+    // 2. Soldado
+    AEnemigo* S1 = World->SpawnActor<AETSoldado>(AETSoldado::StaticClass(), FVector(-300, 300, 100), FRotator::ZeroRotator);
+    if (S1) Cuadrilla1.Add(S1);
 
-    UE_LOG(LogTemp, Warning, TEXT("Enemigos generados: %d"), AEnemigos.Num());
+    // 3. Barco
+    AEnemigo* B1 = World->SpawnActor<AEABarco>(AEABarco::StaticClass(), FVector(300, -300, 100), FRotator::ZeroRotator);
+    if (B1) Cuadrilla1.Add(B1);
+
+    // 4. Helicóptero 2
+    AEnemigo* H2 = World->SpawnActor<AEAHelicoptero>(AEAHelicoptero::StaticClass(), FVector(-300, -300, 100), FRotator::ZeroRotator);
+    if (H2) Cuadrilla1.Add(H2);
+
+    // 5. Soldado 2
+    AEnemigo* S2 = World->SpawnActor<AETSoldado>(AETSoldado::StaticClass(), FVector(0, 400, 100), FRotator::ZeroRotator);
+    if (S2) Cuadrilla1.Add(S2);
+
+    // 6. Barco 2
+    AEnemigo* B2 = World->SpawnActor<AEABarco>(AEABarco::StaticClass(), FVector(0, -400, 100), FRotator::ZeroRotator);
+    if (B2) Cuadrilla1.Add(B2);
+
+    // 7. Avión
+    AEnemigo* A1 = World->SpawnActor<AEAAvion>(AEAAvion::StaticClass(), FVector(400, 0, 100), FRotator::ZeroRotator);
+    if (A1) Cuadrilla1.Add(A1);
+
+    // 8. Tanque
+    AEnemigo* T1 = World->SpawnActor<AETTanque>(AETTanque::StaticClass(), FVector(-400, 0, 100), FRotator::ZeroRotator);
+    if (T1) Cuadrilla1.Add(T1);
+
+    UE_LOG(LogTemp, Warning, TEXT("Cuadrilla 1: %d enemigos"), Cuadrilla1.Num());
 }
 
-// ==================== MÉTODOS DE MUROS ====================
+// ==================== GENERAR CUADRILLA 2 ====================
+
+void ANavesLAB01USFXGameMode::GenerarCuadrilla2()
+{
+    UWorld* World = GetWorld();
+    if (!World) return;
+
+    Cuadrilla2.Empty();
+
+    // Crear 10 enemigos más difíciles para cuadrilla 2
+    // 1. Dron
+    AEnemigo* D1 = World->SpawnActor<AEADron>(AEADron::StaticClass(), FVector(1200, 800, 100), FRotator::ZeroRotator);
+    if (D1) Cuadrilla2.Add(D1);
+
+    // 2. Camión
+    AEnemigo* C1 = World->SpawnActor<AETCamion>(AETCamion::StaticClass(), FVector(-1200, 800, 100), FRotator::ZeroRotator);
+    if (C1) Cuadrilla2.Add(C1);
+
+    // 3. Lancha
+    AEnemigo* L1 = World->SpawnActor<AEALancha>(AEALancha::StaticClass(), FVector(1200, -800, 100), FRotator::ZeroRotator);
+    if (L1) Cuadrilla2.Add(L1);
+
+    // 4. Blindado
+    AEnemigo* BL1 = World->SpawnActor<AETBlindado>(AETBlindado::StaticClass(), FVector(-1200, -800, 100), FRotator::ZeroRotator);
+    if (BL1) Cuadrilla2.Add(BL1);
+
+    // 5. Dron 2
+    AEnemigo* D2 = World->SpawnActor<AEADron>(AEADron::StaticClass(), FVector(0, 1300, 100), FRotator::ZeroRotator);
+    if (D2) Cuadrilla2.Add(D2);
+
+    // 6. Moto Acuática
+    AEnemigo* M1 = World->SpawnActor<AEAMotoAcuatica>(AEAMotoAcuatica::StaticClass(), FVector(0, -1300, 100), FRotator::ZeroRotator);
+    if (M1) Cuadrilla2.Add(M1);
+
+    // 7. Avión
+    AEnemigo* A1 = World->SpawnActor<AEAAvion>(AEAAvion::StaticClass(), FVector(1300, 0, 100), FRotator::ZeroRotator);
+    if (A1) Cuadrilla2.Add(A1);
+
+    // 8. Tanque
+    AEnemigo* T1 = World->SpawnActor<AETTanque>(AETTanque::StaticClass(), FVector(-1300, 0, 100), FRotator::ZeroRotator);
+    if (T1) Cuadrilla2.Add(T1);
+
+    // 9. Lancha 2
+    AEnemigo* L2 = World->SpawnActor<AEALancha>(AEALancha::StaticClass(), FVector(900, 900, 100), FRotator::ZeroRotator);
+    if (L2) Cuadrilla2.Add(L2);
+
+    // 10. Blindado 2
+    AEnemigo* BL2 = World->SpawnActor<AETBlindado>(AETBlindado::StaticClass(), FVector(-900, -900, 100), FRotator::ZeroRotator);
+    if (BL2) Cuadrilla2.Add(BL2);
+
+    UE_LOG(LogTemp, Warning, TEXT("Cuadrilla 2: %d enemigos"), Cuadrilla2.Num());
+}
+
+// ==================== REVISAR CUADRILLA ====================
+
+void ANavesLAB01USFXGameMode::RevisarCuadrilla()
+{
+    if (CuadrillaActual == ECuadrilla::Primera)
+    {
+        for (int i = Cuadrilla1.Num() - 1; i >= 0; i--)
+        {
+            if (Cuadrilla1[i] == nullptr)
+            {
+                Cuadrilla1.RemoveAt(i);
+            }
+        }
+
+        if (Cuadrilla1.Num() == 0)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Cuadrilla 1 destruida! Generando Cuadrilla 2..."));
+            CuadrillaActual = ECuadrilla::Segunda;
+            GenerarCuadrilla2();
+        }
+    }
+    else if (CuadrillaActual == ECuadrilla::Segunda)
+    {
+        for (int i = Cuadrilla2.Num() - 1; i >= 0; i--)
+        {
+            if (Cuadrilla2[i] == nullptr)
+            {
+                Cuadrilla2.RemoveAt(i);
+            }
+        }
+
+        if (Cuadrilla2.Num() == 0)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("TODOS LOS ENEMIGOS DESTRUIDOS!"));
+            GetWorldTimerManager().ClearTimer(TimerRevisarCuadrilla);
+        }
+    }
+}
+
+void ANavesLAB01USFXGameMode::LimpiarCuadrillas()
+{
+    Cuadrilla1.Empty();
+    Cuadrilla2.Empty();
+}
+
+// ==================== MUROS ====================
 
 void ANavesLAB01USFXGameMode::GenerarMuros()
 {
@@ -82,85 +204,57 @@ void ANavesLAB01USFXGameMode::GenerarMuros()
 
     MurosArray.Empty();
 
-    // ===== MUROS DESLIZANTES =====
-    // Esquina Superior Derecha
     CrearMuroDeslizante(World, FVector(1000, 800, 100), FVector(1, 0, 0), 400, 150);
     CrearMuroDeslizante(World, FVector(800, 1000, 100), FVector(0, 1, 0), 400, 150);
-
-    // Esquina Superior Izquierda
     CrearMuroDeslizante(World, FVector(-1000, 800, 100), FVector(1, 0, 0), 400, 150);
     CrearMuroDeslizante(World, FVector(-800, 1000, 100), FVector(0, 1, 0), 400, 150);
-
-    // Esquina Inferior Derecha
     CrearMuroDeslizante(World, FVector(1000, -800, 100), FVector(1, 0, 0), 400, 150);
     CrearMuroDeslizante(World, FVector(800, -1000, 100), FVector(0, 1, 0), 400, 150);
-
-    // Esquina Inferior Izquierda
     CrearMuroDeslizante(World, FVector(-1000, -800, 100), FVector(1, 0, 0), 400, 150);
     CrearMuroDeslizante(World, FVector(-800, -1000, 100), FVector(0, 1, 0), 400, 150);
 
-    // ===== MUROS PARPADEANTES =====
     CrearMuroParpadeante(World, FVector(-500, 1100, 100), 2.0f, 1.0f);
     CrearMuroParpadeante(World, FVector(0, 1150, 100), 3.0f, 1.5f);
     CrearMuroParpadeante(World, FVector(500, 1100, 100), 2.5f, 1.0f);
-
     CrearMuroParpadeante(World, FVector(-500, -1100, 100), 2.0f, 1.5f);
     CrearMuroParpadeante(World, FVector(0, -1150, 100), 3.0f, 1.0f);
     CrearMuroParpadeante(World, FVector(500, -1100, 100), 2.5f, 1.5f);
-
     CrearMuroParpadeante(World, FVector(1100, -500, 100), 2.0f, 1.0f);
     CrearMuroParpadeante(World, FVector(1150, 0, 100), 3.0f, 1.5f);
     CrearMuroParpadeante(World, FVector(1100, 500, 100), 2.5f, 1.0f);
-
     CrearMuroParpadeante(World, FVector(-1100, -500, 100), 2.0f, 1.5f);
     CrearMuroParpadeante(World, FVector(-1150, 0, 100), 3.0f, 1.0f);
     CrearMuroParpadeante(World, FVector(-1100, 500, 100), 2.5f, 1.5f);
 
-    // ===== MUROS DIVISIBLES =====
     CrearMuroDivisible(World, FVector(1300, 1300, 100));
     CrearMuroDivisible(World, FVector(-1300, 1300, 100));
     CrearMuroDivisible(World, FVector(1300, -1300, 100));
     CrearMuroDivisible(World, FVector(-1300, -1300, 100));
 
-    // ===== MUROS ESTÁTICOS =====
     CrearMuroEstatico(World, FVector(-900, 900, 100), FVector(4.0f, 1.0f, 2.0f));
     CrearMuroEstatico(World, FVector(0, 950, 100), FVector(6.0f, 1.0f, 2.0f));
     CrearMuroEstatico(World, FVector(900, 900, 100), FVector(4.0f, 1.0f, 2.0f));
-
     CrearMuroEstatico(World, FVector(-900, -900, 100), FVector(4.0f, 1.0f, 2.0f));
     CrearMuroEstatico(World, FVector(0, -950, 100), FVector(6.0f, 1.0f, 2.0f));
     CrearMuroEstatico(World, FVector(900, -900, 100), FVector(4.0f, 1.0f, 2.0f));
-
-    UE_LOG(LogTemp, Warning, TEXT("Muros generados: %d"), MurosArray.Num());
 }
-
-// ==================== FUNCIONES DE CREACIÓN ====================
 
 void ANavesLAB01USFXGameMode::CrearMuroDeslizante(UWorld* World, FVector Posicion, FVector Direccion, float Distancia, float Velocidad)
 {
     AMuroDeslizante* Muro = World->SpawnActor<AMuroDeslizante>(AMuroDeslizante::StaticClass(), Posicion, FRotator::ZeroRotator);
-    if (Muro)
-    {
-        MurosArray.Add(Muro);
-    }
+    if (Muro) MurosArray.Add(Muro);
 }
 
 void ANavesLAB01USFXGameMode::CrearMuroParpadeante(UWorld* World, FVector Posicion, float TiempoVisible, float TiempoInvisible)
 {
     AMuroParpadeante* Muro = World->SpawnActor<AMuroParpadeante>(AMuroParpadeante::StaticClass(), Posicion, FRotator::ZeroRotator);
-    if (Muro)
-    {
-        MurosArray.Add(Muro);
-    }
+    if (Muro) MurosArray.Add(Muro);
 }
 
 void ANavesLAB01USFXGameMode::CrearMuroDivisible(UWorld* World, FVector Posicion)
 {
     AMuroDivisible* Muro = World->SpawnActor<AMuroDivisible>(AMuroDivisible::StaticClass(), Posicion, FRotator::ZeroRotator);
-    if (Muro)
-    {
-        MurosArray.Add(Muro);
-    }
+    if (Muro) MurosArray.Add(Muro);
 }
 
 void ANavesLAB01USFXGameMode::CrearMuroEstatico(UWorld* World, FVector Posicion, FVector Dimension)

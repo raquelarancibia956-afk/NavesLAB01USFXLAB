@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "NavesLAB01USFX",
-			"Path": "C:\\Users\\AnhisV22\\Downloads\\NavesLAB01USFX-master (2)\\NavesLAB01USFX-master\\Source\\NavesLAB01USFX.Target.cs",
+			"Path": "C:\\Users\\raque\\Downloads\\Rav\\NavesLAB01USFX-lab\\NavesLAB01USFX-master\\Source\\NavesLAB01USFX.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "NavesLAB01USFXEditor",
-			"Path": "C:\\Users\\AnhisV22\\Downloads\\NavesLAB01USFX-master (2)\\NavesLAB01USFX-master\\Source\\NavesLAB01USFXEditor.Target.cs",
+			"Path": "C:\\Users\\raque\\Downloads\\Rav\\NavesLAB01USFX-lab\\NavesLAB01USFX-master\\Source\\NavesLAB01USFXEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
