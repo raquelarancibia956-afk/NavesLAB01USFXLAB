@@ -1,0 +1,33 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-NavesLAB01USFX-7255.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\Enemigo.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EnemigoAcuatico.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EnemigoAereo.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EnemigoTerrestre.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\Muro.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\MuroDeslizante.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\MuroParpadeante.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFX.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXGameMode.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXPawn.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXProjectile.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\Enemigo.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EnemigoAcuatico.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EnemigoAereo.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EnemigoTerrestre.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\Muro.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\MuroDeslizante.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\MuroParpadeante.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFX.init.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXGameMode.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXPawn.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXProjectile.gen.cpp.obj"
+"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\Default.rc2.res"
+/OUT:"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\UE4Editor-NavesLAB01USFX-7255.lib"

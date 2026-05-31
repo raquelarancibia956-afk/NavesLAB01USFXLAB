@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\NavesLAB01USFX.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{30B4A2F7-996F-4591-ADE5-8FBDC5E16CDF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\NavesLAB01USFX.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\NavesLAB01USFXEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{ED91637B-77E1-4B23-AFEA-B869A5161261}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\NavesLAB01USFX">
+      <UniqueIdentifier>{1D9B7E9A-3B94-4A48-A5E2-176EA8002322}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\Enemigo.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\Enemigo.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\EnemigoAcuatico.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\EnemigoAcuatico.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\EnemigoAereo.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\EnemigoAereo.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\EnemigoTerrestre.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\EnemigoTerrestre.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\Muro.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\Muro.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroDeslizante.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroDeslizante.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroDivisible.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroDivisible.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroEstatico.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroEstatico.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\MuroParpadeante.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\MuroParpadeante.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFX.Build.cs">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFX.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFX.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFXGameMode.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFXGameMode.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFXPawn.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFXPawn.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFXProjectile.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\NavesLAB01USFXProjectile.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
