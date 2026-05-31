@@ -127,7 +127,9 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1_Inner = { "Cuadrilla1", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AEnemigo_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1_MetaData[] = {
+		{ "Comment", "// ===== CUADRILLAS =====\n" },
 		{ "ModuleRelativePath", "NavesLAB01USFXGameMode.h" },
+		{ "ToolTip", "===== CUADRILLAS =====" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1 = { "Cuadrilla1", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANavesLAB01USFXGameMode, Cuadrilla1), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANavesLAB01USFXGameMode_Statics::NewProp_Cuadrilla1_MetaData)) };
@@ -189,7 +191,7 @@ void EmptyLinkFunctionForGeneratedCodeNavesLAB01USFXGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 3700801113);
+	IMPLEMENT_CLASS(ANavesLAB01USFXGameMode, 1795084352);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<ANavesLAB01USFXGameMode>()
 	{
 		return ANavesLAB01USFXGameMode::StaticClass();

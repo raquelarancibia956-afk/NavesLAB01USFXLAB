@@ -24,7 +24,8 @@
 ANavesLAB01USFXGameMode::ANavesLAB01USFXGameMode()
 {
     DefaultPawnClass = ANavesLAB01USFXPawn::StaticClass();
-}
+    CuadrillaActual = ECuadrilla::Primera;  // ? Inicializar cuadrilla
+}  // ? CIERRE DEL CONSTRUCTOR
 
 void ANavesLAB01USFXGameMode::BeginPlay()
 {
@@ -52,7 +53,7 @@ void ANavesLAB01USFXGameMode::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
-// ==================== GENERAR CUADRILLA 1 (SOLO CLASES BASE) ====================
+// ==================== GENERAR CUADRILLA 1 ====================
 
 void ANavesLAB01USFXGameMode::GenerarCuadrilla1()
 {
@@ -61,36 +62,27 @@ void ANavesLAB01USFXGameMode::GenerarCuadrilla1()
 
     Cuadrilla1.Empty();
 
-    // Crear 8 enemigos específicos para cuadrilla 1
-    // 1. Helicóptero
     AEnemigo* H1 = World->SpawnActor<AEAHelicoptero>(AEAHelicoptero::StaticClass(), FVector(300, 300, 100), FRotator::ZeroRotator);
     if (H1) Cuadrilla1.Add(H1);
 
-    // 2. Soldado
     AEnemigo* S1 = World->SpawnActor<AETSoldado>(AETSoldado::StaticClass(), FVector(-300, 300, 100), FRotator::ZeroRotator);
     if (S1) Cuadrilla1.Add(S1);
 
-    // 3. Barco
     AEnemigo* B1 = World->SpawnActor<AEABarco>(AEABarco::StaticClass(), FVector(300, -300, 100), FRotator::ZeroRotator);
     if (B1) Cuadrilla1.Add(B1);
 
-    // 4. Helicóptero 2
     AEnemigo* H2 = World->SpawnActor<AEAHelicoptero>(AEAHelicoptero::StaticClass(), FVector(-300, -300, 100), FRotator::ZeroRotator);
     if (H2) Cuadrilla1.Add(H2);
 
-    // 5. Soldado 2
     AEnemigo* S2 = World->SpawnActor<AETSoldado>(AETSoldado::StaticClass(), FVector(0, 400, 100), FRotator::ZeroRotator);
     if (S2) Cuadrilla1.Add(S2);
 
-    // 6. Barco 2
     AEnemigo* B2 = World->SpawnActor<AEABarco>(AEABarco::StaticClass(), FVector(0, -400, 100), FRotator::ZeroRotator);
     if (B2) Cuadrilla1.Add(B2);
 
-    // 7. Avión
     AEnemigo* A1 = World->SpawnActor<AEAAvion>(AEAAvion::StaticClass(), FVector(400, 0, 100), FRotator::ZeroRotator);
     if (A1) Cuadrilla1.Add(A1);
 
-    // 8. Tanque
     AEnemigo* T1 = World->SpawnActor<AETTanque>(AETTanque::StaticClass(), FVector(-400, 0, 100), FRotator::ZeroRotator);
     if (T1) Cuadrilla1.Add(T1);
 
@@ -106,44 +98,33 @@ void ANavesLAB01USFXGameMode::GenerarCuadrilla2()
 
     Cuadrilla2.Empty();
 
-    // Crear 10 enemigos más difíciles para cuadrilla 2
-    // 1. Dron
     AEnemigo* D1 = World->SpawnActor<AEADron>(AEADron::StaticClass(), FVector(1200, 800, 100), FRotator::ZeroRotator);
     if (D1) Cuadrilla2.Add(D1);
 
-    // 2. Camión
     AEnemigo* C1 = World->SpawnActor<AETCamion>(AETCamion::StaticClass(), FVector(-1200, 800, 100), FRotator::ZeroRotator);
     if (C1) Cuadrilla2.Add(C1);
 
-    // 3. Lancha
     AEnemigo* L1 = World->SpawnActor<AEALancha>(AEALancha::StaticClass(), FVector(1200, -800, 100), FRotator::ZeroRotator);
     if (L1) Cuadrilla2.Add(L1);
 
-    // 4. Blindado
     AEnemigo* BL1 = World->SpawnActor<AETBlindado>(AETBlindado::StaticClass(), FVector(-1200, -800, 100), FRotator::ZeroRotator);
     if (BL1) Cuadrilla2.Add(BL1);
 
-    // 5. Dron 2
     AEnemigo* D2 = World->SpawnActor<AEADron>(AEADron::StaticClass(), FVector(0, 1300, 100), FRotator::ZeroRotator);
     if (D2) Cuadrilla2.Add(D2);
 
-    // 6. Moto Acuática
     AEnemigo* M1 = World->SpawnActor<AEAMotoAcuatica>(AEAMotoAcuatica::StaticClass(), FVector(0, -1300, 100), FRotator::ZeroRotator);
     if (M1) Cuadrilla2.Add(M1);
 
-    // 7. Avión
     AEnemigo* A1 = World->SpawnActor<AEAAvion>(AEAAvion::StaticClass(), FVector(1300, 0, 100), FRotator::ZeroRotator);
     if (A1) Cuadrilla2.Add(A1);
 
-    // 8. Tanque
     AEnemigo* T1 = World->SpawnActor<AETTanque>(AETTanque::StaticClass(), FVector(-1300, 0, 100), FRotator::ZeroRotator);
     if (T1) Cuadrilla2.Add(T1);
 
-    // 9. Lancha 2
     AEnemigo* L2 = World->SpawnActor<AEALancha>(AEALancha::StaticClass(), FVector(900, 900, 100), FRotator::ZeroRotator);
     if (L2) Cuadrilla2.Add(L2);
 
-    // 10. Blindado 2
     AEnemigo* BL2 = World->SpawnActor<AETBlindado>(AETBlindado::StaticClass(), FVector(-900, -900, 100), FRotator::ZeroRotator);
     if (BL2) Cuadrilla2.Add(BL2);
 
@@ -184,6 +165,7 @@ void ANavesLAB01USFXGameMode::RevisarCuadrilla()
         if (Cuadrilla2.Num() == 0)
         {
             UE_LOG(LogTemp, Warning, TEXT("TODOS LOS ENEMIGOS DESTRUIDOS!"));
+            GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("¡VICTORIA!"));
             GetWorldTimerManager().ClearTimer(TimerRevisarCuadrilla);
         }
     }

@@ -1,5 +1,3 @@
-// NavesLAB01USFXGameMode.h
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -28,6 +26,7 @@ public:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaTime) override;
 
+    // ===== CUADRILLAS =====
     UPROPERTY()
     TArray<AEnemigo*> Cuadrilla1;
 
@@ -40,13 +39,16 @@ public:
     UPROPERTY()
     ECuadrilla CuadrillaActual;
 
+    // Timer
     FTimerHandle TimerRevisarCuadrilla;
 
+    // ===== MÉTODOS =====
     void GenerarCuadrilla1();
     void GenerarCuadrilla2();
     void RevisarCuadrilla();
     void LimpiarCuadrillas();
 
+    // ===== MUROS =====
     void GenerarMuros();
     void CrearMuroDeslizante(UWorld* World, FVector Posicion, FVector Direccion, float Distancia, float Velocidad);
     void CrearMuroParpadeante(UWorld* World, FVector Posicion, float TiempoVisible, float TiempoInvisible);
