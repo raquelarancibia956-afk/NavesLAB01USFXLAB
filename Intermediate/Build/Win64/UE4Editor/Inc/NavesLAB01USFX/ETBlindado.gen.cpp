@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeETBlindado() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AETBlindado, 2078846429);
+	IMPLEMENT_CLASS(AETBlindado, 160160943);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AETBlindado>()
 	{
 		return AETBlindado::StaticClass();

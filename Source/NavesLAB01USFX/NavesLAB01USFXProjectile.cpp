@@ -4,7 +4,6 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Components/StaticMeshComponent.h"
-#include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine/StaticMesh.h"
 #include "Enemigo.h"  // <<< AGREGADO: incluir Enemigo
 
@@ -19,6 +18,7 @@ ANavesLAB01USFXProjectile::ANavesLAB01USFXProjectile()
 	ProjectileMesh->SetupAttachment(RootComponent);
 	ProjectileMesh->BodyInstance.SetCollisionProfileName("Projectile");
 	ProjectileMesh->OnComponentHit.AddDynamic(this, &ANavesLAB01USFXProjectile::OnHit);
+	ProjectileMesh->SetCollisionResponseToAllChannels(ECR_Block);
 	RootComponent = ProjectileMesh;
 
 	// Use a ProjectileMovementComponent to govern this projectile's movement
@@ -29,6 +29,7 @@ ANavesLAB01USFXProjectile::ANavesLAB01USFXProjectile()
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = false;
 	ProjectileMovement->ProjectileGravityScale = 0.f;
+	ProjectileMesh->SetCollisionResponseToAllChannels(ECR_Block);
 
 	// Die after 3 seconds by default
 	InitialLifeSpan = 3.0f;

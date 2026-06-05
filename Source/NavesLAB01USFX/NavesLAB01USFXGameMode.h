@@ -7,6 +7,8 @@
 class AEnemigo;
 class APawn;
 class AMuro;
+class ABloqueCamino;
+class AFacadeJuego;
 
 UENUM(BlueprintType)
 enum class ECuadrilla : uint8
@@ -26,47 +28,56 @@ public:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaTime) override;
 
-    // ===== CONTENEDOR DE 20 NAVES (NUEVO) =====
+    // ===== LISTA DE DONAS (PADRE) =====
+    UPROPERTY()
+    TArray<AEnemigo*> ListaEnemigos;
+
+    // ===== CONTENEDOR DE 20 NAVES (HIJAS) =====
     UPROPERTY()
     TArray<AEnemigo*> ContenedorNaves;
 
     bool bEnFormacion;
     FTimerHandle TimerCambioModo;
 
-    void GenerarContenedorNaves();
-    void FormarNaves();
-    void ModoAutonomo();
-    void CambiarModo();
-    float EspaciadoFormacion = 100.0f;
-
     // ===== CUADRILLAS =====
+ 
     UPROPERTY()
-    TArray<AEnemigo*> Cuadrilla1;
+    AFacadeJuego* FacadeJuego;
 
-    UPROPERTY()
-    TArray<AEnemigo*> Cuadrilla2;
-
-    UPROPERTY()
-    TArray<AMuro*> MurosArray;
+   // UPROPERTY()
+   // TArray<AEnemigo*> Cuadrilla2;
 
     UPROPERTY()
     ECuadrilla CuadrillaActual;
 
-    // Timer
     FTimerHandle TimerRevisarCuadrilla;
 
-    // ===== MÉTODOS =====
-    void GenerarCuadrilla1();
-    void GenerarCuadrilla2();
-    void RevisarCuadrilla();
-    void LimpiarCuadrillas();
-
     // ===== MUROS =====
+    UPROPERTY()
+    TArray<AMuro*> MurosArray;
+
+    // ===== BLOQUES DE CAMINO =====
+    UPROPERTY()
+    TArray<ABloqueCamino*> ListaBloques;
+
+ 
+
+    // ===== MÉTODOS =====
+    void GenerarContenedorNaves();
+    /*void GenerarCuadrilla1();
+    void GenerarCuadrilla2();
+    void RevisarCuadrilla();*/
+    void FormarNaves();
+    void ModoAutonomo();
+    void CambiarModo();
     void GenerarMuros();
+    void GenerarCamino();
+
     void CrearMuroDeslizante(UWorld* World, FVector Posicion, FVector Direccion, float Distancia, float Velocidad);
     void CrearMuroParpadeante(UWorld* World, FVector Posicion, float TiempoVisible, float TiempoInvisible);
     void CrearMuroDivisible(UWorld* World, FVector Posicion);
     void CrearMuroEstatico(UWorld* World, FVector Posicion, FVector Dimension);
 
     APawn* PlayerPawn;
+    float EspaciadoFormacion = 100.0f;
 };

@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoAcuatico() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoAcuatico, 3508243495);
+	IMPLEMENT_CLASS(AEnemigoAcuatico, 122569447);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEnemigoAcuatico>()
 	{
 		return AEnemigoAcuatico::StaticClass();

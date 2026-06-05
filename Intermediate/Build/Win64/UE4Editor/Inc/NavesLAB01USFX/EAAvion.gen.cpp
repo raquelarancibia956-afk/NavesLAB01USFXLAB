@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEAAvion() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEAAvion, 3856296292);
+	IMPLEMENT_CLASS(AEAAvion, 4045071726);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEAAvion>()
 	{
 		return AEAAvion::StaticClass();

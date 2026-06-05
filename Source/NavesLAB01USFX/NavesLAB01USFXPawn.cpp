@@ -145,14 +145,14 @@ void ANavesLAB01USFXPawn::RecibirDanio(float Cantidad)
 	if (bNaveDestruida) return; 
 
 	VidaActual -= Cantidad;
-	UE_LOG(LogTemp, Warning, TEXT("Nave recibe danio: %.0f, Vida restante: %.0f/%.0f"), Cantidad, VidaActual, VidaMaxima);
+	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Yellow, FString::Printf(TEXT("Nave recibió daño: %.2f"), Cantidad));
+	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Green, FString::Printf(TEXT("Vida actual: %.2f"), VidaActual));
 
 	if (VidaActual <= 0.0f)
 	{
 		bNaveDestruida = true;  
 
 		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("GAME OVER - NAVE DESTRUIDA"));
-		UE_LOG(LogTemp, Warning, TEXT("!!! NAVE DESTRUIDA !!!"));
 
 		// Deshabilitar input del jugador
 		APlayerController* PC = Cast<APlayerController>(GetController());

@@ -128,15 +128,6 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bMovimientoAutonomo_MetaData[];
-#endif
-		static void NewProp_bMovimientoAutonomo_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bMovimientoAutonomo;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TipoMovimiento_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_TipoMovimiento;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MallaEnemigo_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MallaEnemigo;
@@ -149,13 +140,22 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_VidaActual;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Dano_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Dano;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bMovimientoAutonomo_MetaData[];
+#endif
+		static void NewProp_bMovimientoAutonomo_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bMovimientoAutonomo;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Velocidad_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Velocidad;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Dano_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TipoMovimiento_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Dano;
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_TipoMovimiento;
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_PuntosRuta_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PuntosRuta_MetaData[];
@@ -166,9 +166,51 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_IndicePuntoRutaActual;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PosicionInicial_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_PosicionInicial;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Tolerancia_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Tolerancia;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bCambiarEscala_MetaData[];
+#endif
+		static void NewProp_bCambiarEscala_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCambiarEscala;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VelocidadEscala_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_VelocidadEscala;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EscalaMinima_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_EscalaMinima;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EscalaMaxima_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_EscalaMaxima;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bRodearNave_MetaData[];
+#endif
+		static void NewProp_bRodearNave_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bRodearNave;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RadioRodear_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_RadioRodear;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VelocidadAngular_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_VelocidadAngular;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CentroRodear_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CentroRodear;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AnguloActual_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AnguloActual;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Jugador_MetaData[];
 #endif
@@ -191,35 +233,21 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_MetaData[] = {
-		{ "ModuleRelativePath", "Enemigo.h" },
-	};
-#endif
-	void Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_SetBit(void* Obj)
-	{
-		((AEnemigo*)Obj)->bMovimientoAutonomo = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo = { "bMovimientoAutonomo", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AEnemigo), &Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_SetBit, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento_MetaData[] = {
-		{ "ModuleRelativePath", "Enemigo.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento = { "TipoMovimiento", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, TipoMovimiento), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_MallaEnemigo_MetaData[] = {
 		{ "Category", "Colision" },
-		{ "Comment", "// 0=recto, 1=zigzag, 2=\n" },
+		{ "Comment", "// ===== COMPONENTES =====\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Enemigo.h" },
-		{ "ToolTip", "0=recto, 1=zigzag, 2=" },
+		{ "ToolTip", "===== COMPONENTES =====" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_MallaEnemigo = { "MallaEnemigo", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, MallaEnemigo), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_MallaEnemigo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_MallaEnemigo_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaMaxima_MetaData[] = {
 		{ "Category", "Vida" },
+		{ "Comment", "// ===== VIDA =====\n" },
 		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "===== VIDA =====" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaMaxima = { "VidaMaxima", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, VidaMaxima), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaMaxima_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaMaxima_MetaData)) };
@@ -231,6 +259,25 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaActual = { "VidaActual", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, VidaActual), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaActual_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaActual_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano_MetaData[] = {
+		{ "Category", "Stats" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano = { "Dano", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, Dano), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_MetaData[] = {
+		{ "Comment", "// ===== MOVIMIENTO =====\n" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "===== MOVIMIENTO =====" },
+	};
+#endif
+	void Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_SetBit(void* Obj)
+	{
+		((AEnemigo*)Obj)->bMovimientoAutonomo = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo = { "bMovimientoAutonomo", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AEnemigo), &Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_SetBit, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData[] = {
 		{ "Category", "Movimiento" },
 		{ "ModuleRelativePath", "Enemigo.h" },
@@ -238,16 +285,19 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad = { "Velocidad", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, Velocidad), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano_MetaData[] = {
-		{ "Category", "Stats" },
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento_MetaData[] = {
+		{ "Comment", "// ===== TIPO DE MOVIMIENTO PARA HIJAS =====\n" },
 		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "===== TIPO DE MOVIMIENTO PARA HIJAS =====" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano = { "Dano", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, Dano), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento = { "TipoMovimiento", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, TipoMovimiento), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento_MetaData)) };
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosRuta_Inner = { "PuntosRuta", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosRuta_MetaData[] = {
+		{ "Comment", "// ===== RUTA =====\n" },
 		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "===== RUTA =====" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosRuta = { "PuntosRuta", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, PuntosRuta), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosRuta_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosRuta_MetaData)) };
@@ -258,11 +308,87 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_IndicePuntoRutaActual = { "IndicePuntoRutaActual", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, IndicePuntoRutaActual), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_IndicePuntoRutaActual_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_IndicePuntoRutaActual_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_PosicionInicial_MetaData[] = {
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_PosicionInicial = { "PosicionInicial", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, PosicionInicial), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_PosicionInicial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_PosicionInicial_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_Tolerancia_MetaData[] = {
 		{ "ModuleRelativePath", "Enemigo.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_Tolerancia = { "Tolerancia", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, Tolerancia), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_Tolerancia_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_Tolerancia_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_bCambiarEscala_MetaData[] = {
+		{ "Category", "Escalado" },
+		{ "Comment", "// ===== ESCALADO (SOLO PARA EL PADRE/DONAS) =====\n" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "===== ESCALADO (SOLO PARA EL PADRE/DONAS) =====" },
+	};
+#endif
+	void Z_Construct_UClass_AEnemigo_Statics::NewProp_bCambiarEscala_SetBit(void* Obj)
+	{
+		((AEnemigo*)Obj)->bCambiarEscala = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_bCambiarEscala = { "bCambiarEscala", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AEnemigo), &Z_Construct_UClass_AEnemigo_Statics::NewProp_bCambiarEscala_SetBit, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_bCambiarEscala_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_bCambiarEscala_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadEscala_MetaData[] = {
+		{ "Category", "Escalado" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadEscala = { "VelocidadEscala", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, VelocidadEscala), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadEscala_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadEscala_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMinima_MetaData[] = {
+		{ "Category", "Escalado" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMinima = { "EscalaMinima", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, EscalaMinima), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMinima_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMinima_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMaxima_MetaData[] = {
+		{ "Category", "Escalado" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMaxima = { "EscalaMaxima", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, EscalaMaxima), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMaxima_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMaxima_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_bRodearNave_MetaData[] = {
+		{ "Comment", "// ===== RODEAR NAVE (SOLO PARA EL PADRE/DONAS) =====\n" },
+		{ "ModuleRelativePath", "Enemigo.h" },
+		{ "ToolTip", "===== RODEAR NAVE (SOLO PARA EL PADRE/DONAS) =====" },
+	};
+#endif
+	void Z_Construct_UClass_AEnemigo_Statics::NewProp_bRodearNave_SetBit(void* Obj)
+	{
+		((AEnemigo*)Obj)->bRodearNave = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_bRodearNave = { "bRodearNave", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AEnemigo), &Z_Construct_UClass_AEnemigo_Statics::NewProp_bRodearNave_SetBit, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_bRodearNave_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_bRodearNave_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_RadioRodear_MetaData[] = {
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_RadioRodear = { "RadioRodear", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, RadioRodear), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_RadioRodear_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_RadioRodear_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadAngular_MetaData[] = {
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadAngular = { "VelocidadAngular", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, VelocidadAngular), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadAngular_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadAngular_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_CentroRodear_MetaData[] = {
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_CentroRodear = { "CentroRodear", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, CentroRodear), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_CentroRodear_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_CentroRodear_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_AnguloActual_MetaData[] = {
+		{ "ModuleRelativePath", "Enemigo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_AnguloActual = { "AnguloActual", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, AnguloActual), METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_AnguloActual_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_AnguloActual_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigo_Statics::NewProp_Jugador_MetaData[] = {
 		{ "ModuleRelativePath", "Enemigo.h" },
@@ -270,17 +396,27 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigo_Statics::NewProp_Jugador = { "Jugador", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigo, Jugador), Z_Construct_UClass_ANavesLAB01USFXPawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemigo_Statics::NewProp_Jugador_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigo_Statics::NewProp_Jugador_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemigo_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_MallaEnemigo,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaMaxima,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_VidaActual,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_Dano,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_bMovimientoAutonomo,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_Velocidad,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_TipoMovimiento,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosRuta_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_PuntosRuta,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_IndicePuntoRutaActual,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_PosicionInicial,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_Tolerancia,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_bCambiarEscala,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadEscala,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMinima,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_EscalaMaxima,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_bRodearNave,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_RadioRodear,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_VelocidadAngular,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_CentroRodear,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_AnguloActual,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigo_Statics::NewProp_Jugador,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemigo_Statics::StaticCppClassTypeInfo = {
@@ -310,7 +446,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigo, 3440584332);
+	IMPLEMENT_CLASS(AEnemigo, 3701899691);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEnemigo>()
 	{
 		return AEnemigo::StaticClass();

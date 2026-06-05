@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\BloqueCamino.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EAAvion.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EABarco.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EADron.cpp.obj"
@@ -30,6 +31,7 @@
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXGameMode.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXPawn.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\NavesLAB01USFXProjectile.cpp.obj"
+"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\BloqueCamino.gen.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EAAvion.gen.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EABarco.gen.cpp.obj"
 "C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\EADron.gen.cpp.obj"

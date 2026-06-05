@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEABarco() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEABarco, 3528771452);
+	IMPLEMENT_CLASS(AEABarco, 886818358);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEABarco>()
 	{
 		return AEABarco::StaticClass();

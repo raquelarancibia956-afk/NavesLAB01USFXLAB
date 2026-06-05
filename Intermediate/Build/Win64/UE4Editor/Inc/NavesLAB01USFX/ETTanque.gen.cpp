@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeETTanque() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AETTanque, 211955463);
+	IMPLEMENT_CLASS(AETTanque, 4002663013);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AETTanque>()
 	{
 		return AETTanque::StaticClass();

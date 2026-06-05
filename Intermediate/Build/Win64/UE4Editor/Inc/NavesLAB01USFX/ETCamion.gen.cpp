@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeETCamion() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AETCamion, 960327036);
+	IMPLEMENT_CLASS(AETCamion, 3864695677);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AETCamion>()
 	{
 		return AETCamion::StaticClass();

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\NavesLAB01USFXLAB.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9D459F65-0791-4872-9DD8-F33AFF7F009F}</UniqueIdentifier>
+      <UniqueIdentifier>{D13A0A7F-7A5E-497B-8403-5B86B08FECE9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\NavesLAB01USFX.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{21B22FD7-0E9D-4E35-9A48-EE411F3899D0}</UniqueIdentifier>
+      <UniqueIdentifier>{07173E06-11E8-4A3B-BE98-CBC669ABA7F0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,8 +32,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\NavesLAB01USFX">
-      <UniqueIdentifier>{30DC3BA8-1432-4679-8FDC-150695D0A6E6}</UniqueIdentifier>
+      <UniqueIdentifier>{25C952FD-BE5F-4F6D-A413-22C16372BF39}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\BloqueCamino.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\BloqueCamino.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\NavesLAB01USFX\EAAvion.cpp">
       <Filter>Source\NavesLAB01USFX</Filter>
     </ClCompile>
@@ -116,6 +122,12 @@
       <Filter>Source\NavesLAB01USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\NavesLAB01USFX\ETTanque.h">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\NavesLAB01USFX\FacadeJuego.cpp">
+      <Filter>Source\NavesLAB01USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\NavesLAB01USFX\FacadeJuego.h">
       <Filter>Source\NavesLAB01USFX</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\NavesLAB01USFX\Muro.cpp">

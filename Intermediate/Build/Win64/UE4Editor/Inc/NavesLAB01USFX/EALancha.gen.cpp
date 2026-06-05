@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEALancha() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEALancha, 2182644660);
+	IMPLEMENT_CLASS(AEALancha, 1148368864);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEALancha>()
 	{
 		return AEALancha::StaticClass();

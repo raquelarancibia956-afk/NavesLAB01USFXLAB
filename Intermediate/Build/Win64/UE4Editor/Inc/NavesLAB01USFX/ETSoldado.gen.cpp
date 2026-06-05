@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeETSoldado() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AETSoldado, 2591824867);
+	IMPLEMENT_CLASS(AETSoldado, 521338899);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AETSoldado>()
 	{
 		return AETSoldado::StaticClass();

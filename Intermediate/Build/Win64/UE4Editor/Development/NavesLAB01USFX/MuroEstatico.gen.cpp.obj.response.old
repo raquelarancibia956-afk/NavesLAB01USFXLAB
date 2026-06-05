@@ -231,8 +231,8 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
-/I "C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Inc\NavesLAB01USFX"
-/I "C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Source"
+/I C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Inc\NavesLAB01USFX
+/I C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Source
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -262,12 +262,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt"
-/FI"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Inc\NavesLAB01USFX\MuroEstatico.gen.cpp"
-/FI"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\Definitions.NavesLAB01USFX.h"
-/Fo"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\MuroEstatico.gen.cpp.obj"
+/FI"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Inc\NavesLAB01USFX\MuroEstatico.gen.cpp"
+/FI"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\Definitions.NavesLAB01USFX.h"
+/Fo"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\UE4Editor\Development\NavesLAB01USFX\MuroEstatico.gen.cpp.obj"
 /TP
 /GR-
 /W4

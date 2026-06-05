@@ -12,8 +12,11 @@ AMuro::AMuro()
 
 	// Configuración de colisiones
 	MallaMuro->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-	MallaMuro->SetCollisionObjectType(ECC_WorldDynamic);
+	MallaMuro->SetCollisionObjectType(ECC_WorldStatic);
+	MallaMuro->SetSimulatePhysics(false);
+	MallaMuro->SetNotifyRigidBodyCollision(true);
 	MallaMuro->SetCollisionResponseToAllChannels(ECR_Block);
+	
 
 	Dimension = FVector(3.0f, 1.0f, 2.0f);
 }

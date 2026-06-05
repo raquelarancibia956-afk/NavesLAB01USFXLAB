@@ -260,11 +260,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt"
-/I "C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine"
-/Yc"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
-/Fo"C:\Users\AnhisV22\Downloads\NavesLAB01USFX-master (2)\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+/I C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine
+/Yc"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
+/Fo"C:\Users\raque\Downloads\Rav\NavesLAB01USFX-lab\NavesLAB01USFX-master\Intermediate\Build\Win64\NavesLAB01USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 /TP
 /GR-
 /W4

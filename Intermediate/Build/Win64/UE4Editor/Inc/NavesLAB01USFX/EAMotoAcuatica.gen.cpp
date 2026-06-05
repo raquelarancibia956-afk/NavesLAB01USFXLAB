@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEAMotoAcuatica() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEAMotoAcuatica, 3333146535);
+	IMPLEMENT_CLASS(AEAMotoAcuatica, 3211865857);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEAMotoAcuatica>()
 	{
 		return AEAMotoAcuatica::StaticClass();

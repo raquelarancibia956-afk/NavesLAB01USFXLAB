@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoAereo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoAereo, 185403436);
+	IMPLEMENT_CLASS(AEnemigoAereo, 641527260);
 	template<> NAVESLAB01USFX_API UClass* StaticClass<AEnemigoAereo>()
 	{
 		return AEnemigoAereo::StaticClass();
